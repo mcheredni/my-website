@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <link href="styles.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface:wght@400;600&display=swap" rel="stylesheet">
+        <title>What do flowers say?</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg fixed-top custom-navbar">
+        <div class="container justify-content-center">
+            <ul class="nav">
+            <li class="nav-item px-2">
+                <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item px-2">
+                <a class="nav-link" href="meanings.html">Meanings</a>
+            </li>
+            <li class="nav-item px-2">
+                <a class="nav-link active" href="quiz.html">Your Flower</a>
+            </li>
+            <li class="nav-item px-2">
+                <a class="nav-link" href="wish.html">Wish</a>
+            </li>
+            </ul>
+        </div>
+        </nav>
+
+        <h1 class="second-title">Find your flower</h1>
+        <div class="quiz-container">
+            <form id="quiz-form">
+                <div class="question">
+                <h3>1. What best describes your ideal weekend?</h3>
+                <label><input type="radio" name="q1" value="A"> A. A quiet day reading or painting by yourself.</label>
+                <label><input type="radio" name="q1" value="B"> B. Helping a friend move or organizing something.</label>
+                <label><input type="radio" name="q1" value="C"> C. Visiting a flower market with someone you love.</label>
+                <label><input type="radio" name="q1" value="D"> D. Going to a fancy event or looking in the mirror.</label>
+                <label><input type="radio" name="q1" value="E"> E. Wandering somewhere new and soaking in the details.</label>
+                </div>
+
+                <div class="question">
+                <h3>2. What is your communication style?</h3>
+                <label><input type="radio" name="q2" value="A"> A. Reserved but deep — I choose my words carefully.</label>
+                <label><input type="radio" name="q2" value="B"> B. Honest and caring — I want to support others.</label>
+                <label><input type="radio" name="q2" value="C"> C. Warm and emotional — I love meaningful conversations.</label>
+                <label><input type="radio" name="q2" value="D"> D. Expressive and confident — I’m often the center of attention.</label>
+                <label><input type="radio" name="q2" value="E"> E. Thoughtful and curious — I ask a lot of questions.</label>
+                </div>
+
+                <div class="question">
+                <h3>3. Pick a word that feels most like “you”:</h3>
+                <label><input type="radio" name="q3" value="A"> A. Elegant</label>
+                <label><input type="radio" name="q3" value="B"> B. Loyal</label>
+                <label><input type="radio" name="q3" value="C"> C. Romantic</label>
+                <label><input type="radio" name="q3" value="D"> D. Bold</label>
+                <label><input type="radio" name="q3" value="E"> E. Dreamy</label>
+                </div>
+
+                <div class="question">
+                <h3>4. How do you usually handle stress?</h3>
+                <label><input type="radio" name="q4" value="A"> A. I retreat and need my personal space.</label>
+                <label><input type="radio" name="q4" value="B"> B. I take care of others and distract myself.</label>
+                <label><input type="radio" name="q4" value="C"> C. I talk to someone close or journal my feelings.</label>
+                <label><input type="radio" name="q4" value="D"> D. I try to maintain my image, even if I'm struggling.</label>
+                <label><input type="radio" name="q4" value="E"> E. I daydream or take walks to think.</label>
+                </div>
+
+                <div class="question">
+                <h3>5. What would be your dream gift?</h3>
+                <label><input type="radio" name="q5" value="A"> A. A rare perfume or a beautiful book.</label>
+                <label><input type="radio" name="q5" value="B"> B. A heartfelt letter or handmade item.</label>
+                <label><input type="radio" name="q5" value="C"> C. A bouquet and a slow evening with someone special.</label>
+                <label><input type="radio" name="q5" value="D"> D. A mirror, designer item, or personal photoshoot.</label>
+                <label><input type="radio" name="q5" value="E"> E. A sketchbook, plant, or a ticket to somewhere strange.</label>
+                </div>
+
+                <button type="button" onclick="showResult()">See your flower</button>
+            </form>
+        </div>
+        <div id="result"></div>
+
+        <script>
+            function showResult() {
+            const answers = [
+                document.querySelector('input[name="q1"]:checked'),
+                document.querySelector('input[name="q2"]:checked'),
+                document.querySelector('input[name="q3"]:checked'),
+                document.querySelector('input[name="q4"]:checked'),
+                document.querySelector('input[name="q5"]:checked'),
+            ];
+
+            if (answers.includes(null)) {
+                alert("Please answer all questions.");
+                return;
+            }
+
+            const counts = { A: 0, B: 0, C: 0, D: 0, E: 0 };
+            answers.forEach(ans => counts[ans.value]++);
+
+            const maxLetter = Object.keys(counts).reduce((a, b) => counts[a] >= counts[b] ? a : b);
+
+            const flowers = {
+                A: {
+                name: "Orchid",
+                description: `You are elegant, introspective, and mysterious.
+                People admire your quiet strength and rare beauty. You value meaning over noise and bloom in your own time.`,
+                image: "img/img4.JPG"
+                },
+                B: {
+                name: "Lily",
+                description: `You are steady, kind, and grounded.
+                You bring calm to others and live with quiet integrity. Your loyalty is your superpower.`,
+                image: "img/img3.JPG"
+                },
+                C: {
+                name: "Peony",
+                description: `You are romantic, expressive, and full of heart.
+                You feel deeply and love intensely. You thrive in connection, warmth, and beauty.`,
+                image: "img/img8.JPG"
+                },
+                D: {
+                name: "Narcissus",
+                description: `You are confident, radiant, and magnetic.
+                You shine in creative spaces and love to express your unique presence.`,
+                image: "img/img1.JPG"
+                },
+                E: {
+                name: "Hyacinth",
+                description: `You are thoughtful, curious, and dreamy.
+                You live in the details and often escape into your rich inner world.`,
+                image: "img/img9.JPG"
+                }
+            };
+
+            const flower = flowers[maxLetter];
+
+            document.getElementById("result").innerHTML = `
+                <h2>Your flower is: ${flower.name}</h2>
+                <div class="result-content">
+                    <img src="${flower.image}" alt="${flower.name}" />
+                    <p>${flower.description}</p>
+                </div>
+            `;
+            }
+        </script>
+
+    </body>
+</html>

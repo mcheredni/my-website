@@ -1,0 +1,303 @@
+body {
+  padding-top: 170px;
+  padding-left: 6vw;
+  padding-right: 5vw;
+  background-color: rgb(246, 248, 224);
+}
+
+
+.custom-navbar {
+  background-color: rgb(254, 255, 238);
+  height: 6vh;
+  min-height: 60px;
+  z-index: 1000; 
+}
+
+.navbar .nav-link {
+  font-family: 'Raleway', sans-serif;
+  color: rgb(20, 36, 47);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  transition: color 0.2s ease-in-out;
+}
+
+.navbar .nav-link:hover {
+  color: rgb(185, 20, 68);
+}
+
+.navbar .nav-link.active {
+  color: rgb(185, 20, 68);
+  font-weight: bold;
+}
+
+.big-title {
+  font-size: clamp(2rem, 11vw, 8rem);
+  font-family: 'Abril Fatface';
+  color: rgb(20, 36, 47);
+  align-items: flex-start;
+  text-align: left;
+  line-height: 0.9;
+  margin: 0;
+}
+
+.front-text {
+  width: 40%; 
+  max-width: 600px;
+  min-width: 300px;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  margin-left: 0;
+  text-align: left;
+  font-family: 'Raleway', sans-serif;
+  color: rgb(20, 36, 47);
+  margin-top: 100px;
+}
+
+.front-text h2 {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: bold;
+  font-style: italic;
+  color: rgb(185, 20, 68);
+}
+
+.front-text p {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  margin-bottom: 1.4rem;
+}
+
+.main-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto; 
+  flex-wrap: wrap;
+}
+
+
+.second-title {
+  font-size: clamp(2rem, 8vw, 7rem);
+  font-family: 'Abril Fatface';
+  color: rgb(20, 36, 47);
+  text-align: center;
+  line-height: 0.9;
+  margin: 0;
+  margin-top: -60px;
+  white-space: nowrap;
+}
+
+.grid-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; 
+  margin-bottom: 40px; 
+}
+
+.card {
+  background-color: rgb(254, 255, 238);
+  border-radius: 12px;
+  padding: 15px;
+  border: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 40px;
+  max-width: 600px
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  flex-shrink: 0;
+
+}
+
+.card-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-text h3 {
+  margin: 0 0 10px;
+  font-size: 1.3rem;
+  font-family: 'Raleway', sans-serif;
+  color: rgb(20, 36, 47);
+}
+
+.card-text p {
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+  color: rgb(20, 36, 47);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.quiz-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  width: 100%;
+}
+
+#quiz-form {
+  width: 100%;
+  max-width: 700px;
+  text-align: left; 
+  padding: 0 20px;
+}
+
+.question {
+  margin-top: 40px;
+  font-size: 1.3rem;
+  font-family: 'Raleway', sans-serif;
+  color: rgb(20, 36, 47);
+}
+
+.question h3 {
+  margin-bottom: 10px;
+  font-size: 2rem;
+  color: rgb(185, 20, 68);
+  font-weight: bold;
+  font-style: italic;
+}
+
+.question label {
+  display: block;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.question input[type="radio"] {
+  accent-color: rgb(36, 78, 5);
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  cursor: pointer;
+}
+
+button {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 10px 20px;
+  font-size: 1.5rem;
+  font-family: 'Raleway', sans-serif;
+  background-color: rgb(185, 20, 68);
+  color: rgb(254, 255, 238);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(128, 13, 51);
+}
+
+#result {
+  padding: 20px;
+  font-family: 'Raleway', sans-serif;
+  color: rgb(20, 36, 47);
+  text-align: left;
+}
+
+.result-content {
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.result-content img {
+  width: 30vw;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.result-content p {
+  max-width: 300px;
+  width: 100%;
+  line-height: 1.6;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+#result h2 {
+  font-size: clamp(2rem, 7vw, 7rem);
+  font-family: 'Abril Fatface';
+  color: rgb(20, 36, 47);
+  text-align: center;
+  line-height: 0.9;
+  margin: 0;
+}
+
+.margin {
+  margin-bottom: 100px;
+}
+
+.flower-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+}
+
+.flower {
+  width: 30vw;
+  height: auto;
+  cursor: pointer;
+  transition: opacity 0.5s ease;
+  position: absolute;
+  top: -30%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.flower.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.wish-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90vw;
+  height: 8vw;
+  opacity: 0;
+  visibility: hidden;
+  color: rgb(254, 255, 238);
+  background-color: rgb(185, 20, 68);
+  font-size: 2vw;
+  line-height: 0.9;
+  font-style: italic;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 50px;
+  text-align: center;
+  box-sizing: border-box;
+  line-height: 2;
+  transition: opacity 1s ease;
+}
+
+.wish-box.visible {
+  opacity: 1;
+  visibility: visible;
+}
